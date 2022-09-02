@@ -1,0 +1,149 @@
+
+print("\n[_______________________________EXERCISES LEVEL 1_______________________________]\n")
+
+
+# sets
+it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
+A = {19, 22, 24, 20, 25, 26}
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+age = [22, 19, 24, 25, 26, 24, 25, 24]
+
+
+
+# 1 → Find the length of the set it_companies
+print("The length it_companies is", len(it_companies),"items")
+
+# 2 → Add 'Twitter' to it_companies
+it_companies.add ('Twitter')
+print(it_companies)
+
+# 3 → Insert multiple IT companies at once to the set it_companies
+news_companies = {'Ferrari', 'Red Bull', 'Green'}
+it_companies.update(news_companies)
+print(it_companies)
+
+# 4 → Remove one of the companies from the set it_companies
+it_companies.remove('Ferrari')
+print(it_companies)
+
+# 5 → What is the difference between remove and discard
+# Both remove the item to the list , but only remove() method return a error
+
+
+
+print("\n[_______________________________EXERCISES LEVEL 2_______________________________]\n")
+
+
+print("\n__________________Exercises 1__________________\n")
+# 1 → Join A and B
+print(A.union(B))       # {19, 20, 22, 24, 25, 26, 27, 28}
+A.update(B)
+print(A)                # {19, 20, 22, 24, 25, 26, 27, 28}
+
+
+print("\n__________________Exercises 2__________________\n")
+# 2 → Find A intersection B
+A = {19, 22, 24, 20, 25, 26}
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+print("Intersection method", A.intersection(B))     # Intersection method {19, 20, 22, 24, 25, 26}
+
+
+print("\n__________________Exercises 3__________________\n")
+# 3 → Is A subset of B
+print(A.issubset(B))        # True
+
+
+print("\n__________________Exercises 4__________________\n")
+# 4 → Are A amd B disjoint sets
+print(A.isdisjoint(B))      # False
+
+
+print("\n__________________Exercises 5__________________\n")
+# 5 → Join A with B and B with A
+print(A.union(B))       # {19, 20, 22, 24, 25, 26, 27, 28}
+print(B.union(A))       # {19, 20, 22, 24, 25, 26, 27, 28}
+
+
+print("\n__________________Exercises 6__________________\n")
+# 6 → What is the symmetric difference between A and B
+A = {19, 22, 24, 20, 25, 26}
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+print("This is symmetric difference between A and B",A.symmetric_difference(B))     # {27, 28}
+print("This is symmetric difference between B and A",B.symmetric_difference(A))     # {27, 28}
+
+
+print("\n__________________Exercises 7__________________\n")
+# 7 → Delete the sets completly
+del (A,B,it_companies,age)
+
+
+
+print("\n[_______________________________EXERCISES LEVEL 3_______________________________]\n")
+
+
+
+print("\n__________________Exercises 1__________________\n")
+# 1 → Convert the ages to a set and compare the length of the list and the set,
+#       which one is bigger?
+age = [22, 19, 24, 25, 26, 24, 25, 24]
+ages = set(age)
+print(len(age))     # 8 , En una lista puede haber item repetidos
+print(len(ages))    # 5 , Al convertir la lista se eliminan los item repetidos
+
+
+print("\n__________________Exercises2__________________ \n")
+# 2 → Explain the difference between the following data types: string, list, tuple, set
+#There are four collection data types
+
+
+    #   lists : 
+        #   ordered
+        #   mutable
+        #   Allows duplicate members
+
+
+    #   Tuple:
+        #   ordered
+        #   inmutable
+        #   Allows duplicate members
+    
+
+    #   Set:
+        #   Unordered 
+        #   un-indexed
+        #   inmutable
+        #   permit add new items
+        #   Allows duplicate members  
+
+
+    #   Dictionary:
+        #   Unordered
+        #   mutable
+        #   indexed
+        #   No duplicate members
+
+
+print("\n__________________Exercises3__________________ \n")
+# → I am teacher and I love to inspire and tech people.
+#  How many unique words have been used in the sentence? 
+#   Use the split methods and set to get the unique words
+
+sentence = 'I am teacher and I love to inspire and tech people.'
+frase = sentence.split()
+print(len(frase))
+first_word = frase[0]
+second_word = frase[5]
+third_word = frase[9]
+sentence_st = first_word, second_word, third_word
+print("In a list",sentence_st)
+st = set(sentence_st)
+print("In a set",st)
+
+
+
+
+it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
+A = {19, 22, 24, 20, 25, 26}
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+age = [22, 19, 24, 25, 26, 24, 25, 24]
+
