@@ -1,0 +1,40 @@
+# 2 → Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
+    # Autumn = September, October or November
+    # Winter = December, January or February
+    # Spring = March, April or May
+    # Summer = June, July or August
+
+
+
+    
+months = {1:'January', 2:'February', 3:'March', 4:'April', 5:'May', 6:'June', 
+7:'July', 8:'August', 9:'September', 10:'October', 11:'November', 12:'December'}
+   
+for number, month in months.items():
+    print('''Enter a month of year: 
+                1 - January
+                2 - February
+                3 - March
+                4 - April
+                5 - May
+                6 - June
+                7 - July
+                8 - August
+                9 - September
+                10 - October
+                11 - November
+                12 -December
+                0 - Exit
+    ''')
+    user = int(input(" Enter of the number to month: "))
+    if user == 0:
+        print("\nAdios con to mi corachon!!\n")
+        break
+    if user > 2 and user < 6:
+        print(months[user] + " is the season Spring")
+    elif user > 8 and user < 12:
+        print(months[user] + " is the season Autumn")
+    elif user > 5 and user < 9:
+        print(months[user] + " is the season Summer")
+    else:
+        print(months[user] + " is the season Winter")
