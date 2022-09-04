@@ -19,7 +19,7 @@ else:
     print("Wai wait wait until to 18 years old")
 
 
-# 2 → Compae the values of «my_age» and «your_age» usinf if...else. Who is older(me or you)?
+# 2 → Compare the values of «my_age» and «your_age» usinf if...else. Who is older(me or you)?
 #     use input("Ebter you age: ") to get the age as input. You can use a nested condition to print 'year'
 #     for 1 year difference in age, 'years' for bigger differences, and a custom text if «my_age = your_age»
 
@@ -68,23 +68,14 @@ ID = {'profile':{'first name':'a',
                 
     
                             
-#subjects = ['Mathematics', 'English', 'Spanish', 'Filosofy', 'Physical_Education', 'Theater', 'Programming' ]
+
 profile_keys = ID['profile'].keys()
-# print("prueba profile: ", prueba1)
-# prueba2 = ID['profile'].values()
-# print("prueba data profile: ", prueba2)
-
 address_keys = ID['profile']['address'].keys()
-# print("prueba address: ", prueba3)
-# prueba4 = ID['profile']['address'].values()
-# print("prueba data address: ", prueba4)
-
 score_keys = ID['profile']['scores'].keys()
-print("prueba score keys: ", score_keys)
 score_values = ID['profile']['scores'].values()
-print("prueba score values: ", score_values)
 total_keys =len(profile_keys) + len(address_keys) + len(score_keys)
-print(total_keys)
+
+aleatorio = random.randrange(0,10000,1)
 
 
 count = 0   
@@ -109,21 +100,23 @@ for data_profile in ID['profile'].keys():
     else:
         print("Ron da error")
 
+print("\nYour ID to access is ", aleatorio, "\n")
+
 
 for subjects, score in ID['profile']['scores'].items():
     if score > 90 and score < 100:
-        print("In {} obtuvo {} is A".format(subjects, score))
+        print("Got in {} the grade {} is A".format(subjects, score))
     if score > 70 and score < 89:
-        print("In {} obtuvo {} is B".format(subjects, score))
+        print("Got in {} the grade {} is B".format(subjects, score))
     if score > 60 and score < 69:
-        print("In {} obtuvo {} is C".format(subjects, score))
+        print("Got in {} the grade {} is C".format(subjects, score))
     if score > 50 and score < 59:
-        print("In {} obtuvo {} is D".format(subjects, score))
+        print("Got in {} the grade {} is D".format(subjects, score))
     if score > 0 and score < 49:
-        print("In {} obtuvo {} is F".format(subjects, score))
+        print("Got in {} the grade {} is F".format(subjects, score))
 
 
-print(ID)
+print("Este es el perfil que acabas de crear: ",ID)
 
 
 
