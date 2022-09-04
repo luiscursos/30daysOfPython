@@ -1,0 +1,14 @@
+# 3 → The following list contains some fruit
+# If the fruit doesn't in the list add the fruit to the list and print " The modified list"
+# If the fruit exist print ("That fruit already exist in the list")
+fruits = ['banana', 'orange', 'mango', 'lemon']
+user = input("Enter a fruit name: ")
+
+
+if user in fruits:
+    print("The fruit exist in the list")
+else:
+    print("The modified list")
+    fruits.append(user)
+
+print(fruits)
