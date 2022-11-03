@@ -1,3 +1,6 @@
+from asyncio.proactor_events import _ProactorDuplexPipeTransport
+
+
 print ("\n***********************  EXERCISES DAY 10  ***********************\n")
 
 
@@ -2957,14 +2960,15 @@ lenguajes = set()                           # Declaramos un set vacío
 for element in countries_data:              # Iteramos sobre la lista que contiene los diccionarios
   lenguajes.update(element["languages"])    #  update añade los elementos de la lista "languages" al set "lenguajes"
   
-print("Los idiomas son:", lenguajes)
-print("El total de idiomas que aparecen en el archivo es",(len(lenguajes))) #112
+print("\nLos idiomas son:\n", lenguajes)
+print("\nEl total de idiomas que aparecen en el archivo es ",(len(lenguajes)),"\n") #112
 
 
-#### ii → Find the ten most spoken languages from the data
+#### ii → ii Find the ten most spoken languages from the data
 
 idiomas = set()
 repeticiones = {}
+
 
 for element in countries_data:      # Bucle que itera la lista que contiene todos los diccionarios
     idiomas.update(element["languages"])    # Se agregan al set idiomas el contenido de la lista lenguages. En cada iteracion que coincida con la key de un diccionario que se llame lenguaje
@@ -2976,7 +2980,7 @@ for element in countries_data:      # Bucle que itera la lista que contiene todo
 
 
 sorted(repeticiones.values(), reverse=True)  # Se crea una lista de los valores en orden ascendente
-sorted_dict = {}        # Se crea un diccionario para guardarlo despues en orden ascendente
+#sorted_dict = {}        # Se crea un diccionario para guardarlo despues en orden ascendente
 
 final_value = repeticiones.values()     # Se crea una lista con los valores del diccionario
 final_keys =repeticiones.keys()         # Se crea una lista con las claves del diccionario
@@ -2995,37 +2999,25 @@ for idioma, numero in dct.items():
     c+=1
     
 
-
-
-
-# lenguajes = set()   # set donde se almacenan los valores que tiene la lista "languages"
-# repeticiones = {}   # Diccionario
-
-# for element in countries_data:
-#     lenguajes.update(element["languages"])
-#     for i in list(lenguajes):   # Itera sobre el set lenguajes convirtiendolo en una lista 
-#         if i in repeticiones:   #  # Itera sobre la lista repeticiones para empezar a incluir los valores (lenguajes), 
-#             repeticiones[i] +=1
-#         else:                         # si ya estuvieran en la lista no los incluyen (con el else)
-#             repeticiones[i] = 0
-#     print(repeticiones)
-#     print(len(repeticiones))
-
-
-
-# unicos = len(set(lang for pais in countries_data for lang in pais["languages"]))
-# print("unicos",unicos)
-
-
-
-
-
-
-
-
-        
-
+# iii. Find the 10 most populated countries in the world
+def sort_dict_by_value(d, reverse=False):
+    return dict(sorted(d.items(), key=lambda x: x[1], reverse=reverse))
     
+
+counts = {}
+counts = sort_dict_by_value(counts, True)   #Llama a la función y
+for i in list(counts.items())[:10]:
+    print(i)
+
+populations = {}
+for i in countries_data:
+    populations[i["name"]] = i["population"]
+    
+populations = sort_dict_by_value(populations, True)
+for i in list(populations.items())[:10]:
+    print(i)
+       
+
        
            
         
